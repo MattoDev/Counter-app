@@ -1,17 +1,21 @@
+//La proptypes sirven para definir el tipo a las propertys
+import PropTypes from "prop-types";
+
 const newMessage = {
   message: "Hola mundo",
   title: "El Mateo",
 };
 
-const saludo = () => {
-  return `Saludo desde la funcion ${2 + 2}`;
-};
-export function App2() {
+export function FirstApp({ title, subTitle }) {
   return (
     <>
-      <h1>Hola Mundo</h1>
-      <code>{saludo()}</code>
-      <p>Soy un puto subtitulo</p>
+      <h1>{title}</h1>
+      <p>{subTitle}</p>
     </>
   );
 }
+
+FirstApp.propTypes = {
+  title: PropTypes.string.isRequired,
+  subTitle: PropTypes.number.isRequired,
+};
